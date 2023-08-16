@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="content">
+
+    <header class="header1">
+    <header class="header2">
+        <div class="logo">
+          <img src="./assests/images/Screenshot 2023-08-10 124313.png" alt="Your Logo">
+        </div>
+       
+        <div class="search-bar">
+          <input type="text" id="searchInput" oninput="searchProducts()" placeholder="Search...">
+          <button type="submit">Search</button>
+        </div>
+        <div class="cartCount">
+            <a href="#"  id="cart-icon" class="fas fa-shopping-cart cart-animation"></a>
+            <span id="cart-item-count">0</span>
+    
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#mobiles-container">Smartphones</a></li>
+            <li><a href="#laptops-container">Laptops</a></li>
+            <li><a href="#watches-container">Wearables</a></li>
+            <li><a href="#automotives-container">Accessories</a></li>
+            <li><a href="login.html" class="login">Login</a></li>
+          </ul>
+          
+        </nav>
+      </header>
+    </header>
+<section>
+
+  <h1 class="slideHeading">Check! This Out...</h1>
+    <div class="slideshow-container">
+      <div class="slide">
+        <img src="./assests/images/5c952971-1e5a-4bcc-9594-d2e92645c332.png" alt="Product 1">
+        <div class="discount">50% off</div>
+      </div>
+      <div class="slide">
+        <img src="./assests/images/mobile2.png" alt="Product 2">
+        <div class="discount">60% off</div>
+      </div>
+      <div class="slide">
+        <img src="./assests/images/laptop2.avif" alt="Product 3">
+        <div class="discount">20% off</div>
+      </div>
+      <div class="slide">
+        <img src="./assests/images/watch2.avif" alt="Product 3">
+        <div class="discount">30% off</div>
+      </div>
+      <div class="slide">
+        <img src="./assests/images/watch3.avif" alt="Product 3">
+        <div class="discount">15% off</div>
+      </div>
+      <div class="slide">
+        <img src="./assests/images/laptop3.avif" alt="Product 3">
+        <div class="discount">70% off</div>
+      </div>
+
+      <a class="prev" onclick="prevSlide()">&#10094;</a>
+      <a class="next" onclick="nextSlide()">&#10095;</a>
+
+
+    </div>
+
+    <div class="feature-section">
+    <section class="feature-section">
+    
+      <div class="container">
+        <h1 class="deal">Deals of the Day</h1>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="feature-item">
+              <img src="./assests/images/laptop112.webp" alt="Product 1">
+              <h1>Acer Aspire Lite 11th Gen Intel Core i5-1155G7 Thin and Light Laptop</h1>
+              <p>This high-performance laptop is perfect for both work and play. With its powerful processor and ample storage, you can multitask seamlessly and store all your important files. The sleek design and vibrant display make it a stylish choice.</p>
+              <div class="price">$999.99</div>
+              <div class="deal-badge">Deal of the Day</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-item">
+              <img src="./assests/images/mobile111.webp" alt="Product 2">
+              <h1>Samsung Galaxy M33 5G (Mystique Green, 8GB, 128GB Storage)</h1>
+              <p>Stay connected on the go with this feature-packed mobile phone. Capture stunning photos with the high-resolution camera, enjoy immersive multimedia experiences on the large display, and stay productive with the latest apps and technologies.</p>
+              <div class="price">$599.99</div>
+              <div class="deal-badge">Limited Time Deal</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-item">
+              <img src="./assests/images/watch111.jpg" alt="Product 3">
+              <h1>Helix Digital Black Dial Unisex's Watch</h1>
+              <p>Elevate your gaming experience with this cutting-edge gaming console. Immerse yourself in realistic graphics and smooth gameplay, and enjoy a vast library of games. With its sleek design and powerful performance, it's a must-have for gamers.</p>
+              <div class="price">$499.99</div>
+              <div class="deal-badge">Deal of the Day</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+    <section>
+      <h1 class="heading">Our Products</h1>
+    <div class="categories">
+      <h1>SmartPhones</h1>
+        <div  id="mobiles-container" class="mobiles-container productList"></div>
+        <h1>Laptops</h1>
+        <div id="laptops-container"  class="laptops-container productList"></div>
+        <h1>Watches</h1>
+        <div id="watches-container"  class="watches-container productList"></div>
+        <h1>Automotives</h1>
+        <div id="automotives-container"  class="automotives-container productList"></div>
+    </div>
+</section>
+<div id="ErrorDisplay"></div>
+
+
+<div class="cart-section">
+    <a href="./index.html" target="_self"  class="back">Back</a>
+    <h2>Your Cart</h2>
+    <div id="cart-items-container" class="cart-list"></div>
+    <div id="cart-total" class="cart-total">Total: $0.00</div>
+    <button onclick="checkout()" class="checkout">Checkout</button>
+</div>
+
+<footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>About Us</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl ac tincidunt consequat, urna libero ultrices mauris, id lacinia lectus nunc id justo.</p>
+      </div>
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <p>Email: info@example.com</p>
+        <p>Phone: 123-456-7890</p>
+        <p>Address: 123 Main Street, City, State, ZIP</p>
+      </div>
+      <div class="footer-column">
+        <h3>Follow Us</h3>
+        <ul class="social-media-icons">
+          <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 Your Website. All rights reserved.</p>
+    </div>
+  </footer>
+  
+</div>
+
+    <script src="./script1.js"></script>
+</body>
+</html>

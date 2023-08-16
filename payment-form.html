@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    /* Styles for the payment form container */
+    #payment-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      background-color: #f3f3f3;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    
+    /* Styles for the input fields */
+    #payment-form input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    
+    /* Styles for the submit button */
+    #payment-form button[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #f0c14b;
+      border: 1px solid #a88734;
+      border-radius: 4px;
+      color: #111;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    /* Styles for the submit button on hover */
+    #payment-form button[type="submit"]:hover {
+      background-color: #f7dfa5;
+    }
+    
+   
+  </style>
+</head>
+<body>
+  <div>
+    <form id="payment-form">
+      <!-- Payment form fields go here -->
+      <h1>Payment</h1>
+      <input type="text" placeholder="Mobile Number" pattern="[0-9]+" required>
+      <input type="text" placeholder="Card Number" pattern="[0-9]+" required>
+      <input type="text" placeholder="Expiration Date" pattern="[0-9]+" required>
+      <input type="text" placeholder="CVV" pattern="[0-9]+" required>
+      <input type="text" placeholder="Address" id="Address" pattern="[A-Za-z\s]+" required>
+      <button type="submit">Submit Payment</button>
+    </form>
+  </div>
+
+  <script>
+    var paymentForm = document.getElementById('payment-form');
+    paymentForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const address = document.querySelector('#Address').value;
+      alert('Payment successful. Will Deliver Soon to ' + address);
+
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>

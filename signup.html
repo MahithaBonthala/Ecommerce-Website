@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+          <h2>Login</h2>
+          <form id="login-form" onsubmit="window.location.href = 'payment-form.html'; return false;">
+            <input type="email" placeholder="Email" id="email"  required>
+            <input type="password" placeholder="Password" id="password"  required>
+          <button type="submit" >Login</button>
+          </form>
+          <p>Don't have an account? <a href="#" onclick="toggleForm()">Signup</a></p>
+        </div>
+        <div class="form-wrapper hidden">
+          <h2>Signup</h2>
+          <form id="signup-form" onsubmit="window.location.href = 'payment-form.html'; return false;">
+            <input type="text" placeholder="Name"   required>
+            <input type="email" placeholder="Email" id="email" required>
+            <input type="password" placeholder="Password"  id="password" required>
+          <button type="submit"  >Sign Up</button>
+
+          </form>
+          <p>Already have an account? <a href="#" onclick="toggleForm()">Login</a></p>
+        </div>
+      </div>
+
+      <script src="./login.js"></script>
+
+      <script>
+        var loginForm = document.getElementById('login-form');
+        var signUPForm = document.getElementById('signup-form');
+        loginForm.addEventListener('submit', function(event) {
+          event.preventDefault();
+      
+          alert('Redirecting to the Payment');
+      
+         
+        });
+      
+        signUPForm.addEventListener('submit', function(event) {
+          event.preventDefault();
+      
+          alert('Redirecting to the Payment');
+      
+          
+        });
+      </script>
+  
+</body>
+</html>
